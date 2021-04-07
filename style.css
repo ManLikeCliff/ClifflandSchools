@@ -560,80 +560,79 @@ span {
   }
 }
 
-/* .login-col {
-  margin: 100px auto;
-  width: 350px;
-  background-color: #fff;
-  padding: 10px auto;
+/*------scroll to the top-------*/
+
+html {
+  scroll-behavior: smooth;
 }
 
-.form {
-  width: 100%;
-  margin-top: 30px;
+body {
+  position: relative;
 }
 
-.form input {
-  font-size: 15px;
-  padding: 10px 20px 10px 5px;
-  border: none;
-  outline: none;
-  background: none;
-}
-
-.username, .password {
-  display: block;
-  border-radius: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: auto;
-  margin: 10px 0;
+.scrolltop-wrap {
   box-sizing: border-box;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  bottom: 0;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-
-.form svg {
-  height: 20px;
-  margin-bottom: -5px;
-  margin-left: 10px;
-  margin-right: 5px;
+.scrolltop-wrap #scrolltop-bg {
+  fill: #007bff;
 }
-
-.options {
-  display: flex;
-  flex-direction: row;
-  font-size: 13px;
-  justify-content: space-between;
-  padding: 5px 0px;
-  margin-bottom: 30px;
+.scrolltop-wrap #scrolltop-arrow {
+  fill: white;
 }
-
-button.signin-btn {
-  width: 350px;
-  padding: 5px 3px;
-  border: none;
-  font-size: 18px;
-  border-radius: 30px;
-  background-color: #63d406;
-  color: #fff;
-  margin-bottom: 5px;
-  cursor: pointer;
+.scrolltop-wrap a:hover #scrolltop-bg {
+  fill: #2990ff;
 }
-
-button.signin-btn:hover {
-  opacity: 0.8;
+.scrolltop-wrap a:hover #scrolltop-arrow {
+  fill: white;
 }
-
-.sign-up {
-  text-align: center;
-  font-size: 14px;
-  margin-top: 15px;
-}
-
-a {
-  text-decoration: none;
-  color: #505050;
-}
-
-@media (max-width: 700px) {
-  .sub-header h1 {
-    margin-top: 15px;
+@supports (-moz-appearance: meterbar) {
+  .scrolltop-wrap {
+    clip: rect(0, 3rem, auto, 0);
   }
-} */
+}
+.scrolltop-wrap a {
+  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -5rem;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: -5rem;
+  transform: translateY(100vh);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: all;
+  outline: none;
+  overflow: hidden;
+}
+.scrolltop-wrap a svg {
+  display: block;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.scrolltop-wrap a svg path {
+  transition: all 0.1s;
+}
+.scrolltop-wrap a #scrolltop-arrow {
+  transform: scale(0.66);
+  transform-origin: center;
+}
+@media print {
+  .scrolltop-wrap {
+    display: none !important;
+  }
+}
